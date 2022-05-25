@@ -1,0 +1,5 @@
+unbound-*
+vendor
+.vscode
+*.deb
+install-temp
