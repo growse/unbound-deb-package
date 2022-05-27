@@ -18,7 +18,7 @@ APP_POST_CONFIGURE_FILE := $(APP_SRCDIR)/config.status
 APP_BINARY = $(APP_SRCDIR)/unbound
 DESTDIR := $(abspath ./install-temp)
 
-APP_CONFIGURE_OPTIONS=--enable-systemd --prefix=
+APP_CONFIGURE_OPTIONS=--enable-systemd --enable-dnstap --prefix=
 
 # Let's map from go architectures to deb architectures, because they're not the same!
 DEB_amd64_ARCH := amd64
