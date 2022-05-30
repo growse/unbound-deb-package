@@ -34,6 +34,9 @@ build: $(APP_BINARY)
 .PHONY: extract
 extract: $(APP_CONFIGURE_SCRIPT)
 
+.PHONY: patch
+patch: $(APP_SRCDIR)/patch
+
 .PHONY: configure
 configure: $(APP_POST_CONFIGURE_FILE)
 
@@ -47,8 +50,12 @@ $(APP_CONFIGURE_SCRIPT): $(TARBALL)
 	$(info making $@)
 	tar -zmxvf $(TARBALL)
 
-$(APP_POST_CONFIGURE_FILE): $(APP_CONFIGURE_SCRIPT)
-	$(info making $@)	
+$(APP_SRCDIR)/patch: $(APP_CONFIGURE_SCRIPT)
+	patch -ruN -d $(APP_SRCDIR) -p0 < systemd_unit_cap_chown.patch 
+	touch $(APP_SRCDIR)/patch
+
+
+$(APP_POST_CONFIGURE_FILE): $(APP_CONFIGURE_SCRIPT) $(APP_SRCDIR)/patch
 	cd $(APP_SRCDIR) && $(abspath $(APP_CONFIGURE_SCRIPT)) $(APP_CONFIGURE_OPTIONS)
 
 $(APP_BINARY): $(APP_POST_CONFIGURE_FILE)

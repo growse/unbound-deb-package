@@ -1,0 +1,12 @@
+diff -ruN contrib/unbound.service.in ./contrib/unbound.service.in
+--- contrib/unbound.service.in	2022-05-30 14:34:17.675086189 +0100
++++ contrib/unbound.service.in	2022-05-30 14:34:37.052043959 +0100
+@@ -54,7 +54,7 @@
+ ExecStart=@UNBOUND_SBIN_DIR@/unbound -d -p
+ NotifyAccess=main
+ Type=notify
+-CapabilityBoundingSet=CAP_NET_BIND_SERVICE CAP_SETGID CAP_SETUID CAP_SYS_CHROOT CAP_SYS_RESOURCE CAP_NET_RAW
++CapabilityBoundingSet=CAP_NET_BIND_SERVICE CAP_SETGID CAP_SETUID CAP_SYS_CHROOT CAP_SYS_RESOURCE CAP_NET_RAW CAP_CHOWN
+ MemoryDenyWriteExecute=true
+ NoNewPrivileges=true
+ PrivateDevices=true
