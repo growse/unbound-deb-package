@@ -4,5 +4,6 @@ if [ -z "`id -u unbound 2> /dev/null`" ]; then
         --quiet unbound || true
 
 /usr/sbin/unbound-control-setup
-/usr/bin/chown unbound unbound_control.pem unbound_control.key unbound_server.pem unbound_server.key
+/usr/bin/chown root:unbound unbound_control.pem unbound_control.key unbound_server.pem unbound_server.key
+/usr/bin/chmod 440 unbound_control.pem unbound_control.key unbound_server.pem unbound_server.key
 fi

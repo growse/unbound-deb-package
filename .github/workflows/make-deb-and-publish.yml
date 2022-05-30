@@ -1,7 +1,7 @@
 ---
 env:
   PACKAGE_NAME: unbound
-  APT_DEPENDENCIES: libsystemd-dev protobuf-c-compiler libprotobuf-c-dev
+  APT_DEPENDENCIES: libsystemd-dev protobuf-c-compiler libprotobuf-c-dev libevent-dev
 
 name: Build, package and publish
 "on":
