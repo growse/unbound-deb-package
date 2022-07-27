@@ -1,18 +1,18 @@
 DEBNAME := unbound
 APP_REMOTE := https://nlnetlabs.nl/downloads/unbound/
-VERSION := 1.15.0
+UNBOUND_VERSION := 1.15.0
 APPDESCRIPTION := Unbound recursive resolver
 APPURL := https://nlnetlabs.nl/projects/unbound/download/
 APP_VENDOR := https://nlnetlabs.nl/
 ARCH := amd64
 
-TARBALL = ./$(DEBNAME)-$(VERSION).tar.gz
+TARBALL = ./$(DEBNAME)-$(UNBOUND_VERSION).tar.gz
 SRC_REMOTE := $(APP_REMOTE)$(TARBALL)
 
 # Setup
 BUILD_NUMBER ?= 0
-DEBVERSION := $(VERSION:v%=%)-$(BUILD_NUMBER)
-APP_SRCDIR := $(DEBNAME)-$(VERSION)
+DEBVERSION := $(UNBOUND_VERSION:v%=%)-$(BUILD_NUMBER)
+APP_SRCDIR := $(DEBNAME)-$(UNBOUND_VERSION)
 APP_CONFIGURE_SCRIPT = $(APP_SRCDIR)/configure
 APP_POST_CONFIGURE_FILE := $(APP_SRCDIR)/config.status
 APP_BINARY = $(APP_SRCDIR)/unbound
