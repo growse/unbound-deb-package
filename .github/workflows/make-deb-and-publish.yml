@@ -27,7 +27,7 @@ jobs:
         with:
           bundler-cache: true
       - name: Make deb package
-        run: make package
+        run: make -j$(nproc) package
         env:
           BUILD_NUMBER: ${{ github.run_number }}
       - name: Upload deb file
