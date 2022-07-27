@@ -1,6 +1,6 @@
 DEBNAME := unbound
 APP_REMOTE := https://nlnetlabs.nl/downloads/unbound/
-UNBOUND_VERSION := 1.15.0
+UNBOUND_VERSION := 1.16.1
 APPDESCRIPTION := Unbound recursive resolver
 APPURL := https://nlnetlabs.nl/projects/unbound/download/
 APP_VENDOR := https://nlnetlabs.nl/
@@ -93,6 +93,6 @@ $(DEBNAME)_$(DEBVERSION)_%.deb: $(APP_BINARY) $(DESTDIR)/sbin/unbound
 .PHONY: clean
 clean:
 	rm -f *.deb
-	rm -rf $(APP_SRCDIR)
-	rm -f $(TARBALL)
+	rm -rf -- unbound-*
+	rm -f -- *.tar.gz
 	rm -rf $(DESTDIR)
