@@ -1,6 +1,6 @@
 DEBNAME := unbound
 APP_REMOTE := https://nlnetlabs.nl/downloads/unbound/
-UNBOUND_VERSION := 1.16.3
+UNBOUND_VERSION := 1.17.0
 APPDESCRIPTION := Unbound recursive resolver
 APPURL := https://nlnetlabs.nl/projects/unbound/download/
 APP_VENDOR := https://nlnetlabs.nl/
