@@ -1,7 +1,7 @@
 DEBNAME := unbound
 APP_REMOTE := https://nlnetlabs.nl/downloads/unbound/
 # renovate: datasource=github-tags depName=NLnetLabs/unbound
-UNBOUND_VERSION := 1.17.0
+UNBOUND_VERSION := 1.19.0
 APPDESCRIPTION := Unbound recursive resolver
 APPURL := https://nlnetlabs.nl/projects/unbound/download/
 APP_VENDOR := https://nlnetlabs.nl/
